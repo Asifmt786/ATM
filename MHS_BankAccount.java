@@ -3,6 +3,15 @@ public class MHS_BankAccount {
     private String accountNr = "";
     private double balance = 0.0;
 
+    public MHS_BankAccount(){
+
+    }
+    public MHS_BankAccount(String bankNameing, String AccountNring, double balanceing) {
+      this.bankName = bankNameing;
+      this.accountNr = AccountNring;
+      this.balance = balanceing;
+    }
+
     public void setBankName(String name) {
       bankName = name;
     }

@@ -1,8 +1,18 @@
 import java.util.ArrayList;
 
 public class MHS_Bank {
-  public static ArrayList<MHS_BankAccount> bankList
-  = new ArrayList<MHS_BankAccount>();
+  public static ArrayList<MHS_BankAccount> bankList = new ArrayList();
+  MHS_BankAccount No = new MHS_BankAccount("Nordea", "1234575590", 50990.30);
+  MHS_BankAccount Ha = new MHS_BankAccount("Handelsbanken", "1423598090", 20.25);
+  MHS_BankAccount SE = new MHS_BankAccount("SEB", "5531877890", -150.12);
+  MHS_BankAccount Sw = new MHS_BankAccount("Swedbank", "9915690349", 420.48);
+
+  public void setupAccounts(){
+    bankList.add(No);
+    bankList.add(Ha);
+    bankList.add(SE);
+    bankList.add(Sw);
+  }
 
   public boolean addAccount(String bankName, String accountNr, double balance){
     if(accountGoodFormat(bankName, accountNr) && !accountExists(accountNr)) {
@@ -60,7 +70,7 @@ public class MHS_Bank {
     }
     return found;
   }
-  public String makePurchase(String accountNumber, double ticketPrice) {
+  public static String makePurchase(String accountNumber, double ticketPrice) {
     String result = "";
     for(int i = 0; i < bankList.size(); i++) {
       if(bankList.get(i).getAccountNumber().contains(accountNumber)) {
@@ -77,5 +87,4 @@ public class MHS_Bank {
     }
     return result;
   }
-
 }
