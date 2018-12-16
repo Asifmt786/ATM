@@ -64,7 +64,7 @@ public class TIS_Main {
       //implementing the chosen ticket type
       TIS_Ticket chosenTicket = TIS_Tickets.getTickets()[choice -1];
       System.out.println(" Chosen Ticket: " + chosenTicket.getType() + " " +
-       precision.format(chosenTicket.getPrice()) + " SEK");
+          precision.format(chosenTicket.getPrice()) + " SEK");
 
       System.out.println(" Register accountnumber: ");
       String accountNr = scan.nextLine();
@@ -78,7 +78,7 @@ public class TIS_Main {
         main.printReceipt(chosenTicket.getType(),
         chosenTicket.getPrice(), result.getBank());
       } else {
-        System.out.println("Try again.");
+        System.out.println("\n[Purchase failed. Try again.]\n");
       }
     }
   }

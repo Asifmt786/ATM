@@ -1,12 +1,9 @@
 public class TIS_Transaction {
-
+public static MHS_Main talkToBank = new MHS_Main();
 
   public static TIS_TransactionStatus  makeTransaction(String accountNr, double ticketPrice){
-    System.out.println("We are sending: #" + accountNr + "# #" + ticketPrice+"#");
 
-    String result = MHS_Main.purchaseTicket(accountNr, ticketPrice);
-
-    System.out.println("Result" + result);
+    String result = talkToBank.purchaseTicket(accountNr, ticketPrice);
 
     if(result.equals("Wrong AccountNr")){
       return new TIS_TransactionStatus(false, "");

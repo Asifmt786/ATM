@@ -73,9 +73,6 @@ public class MHS_Bank {
   public static String makePurchase(String accountNumber, double ticketPrice) {
     String result = "";
 
-    //Karin testar
-    System.out.println("Number of accounts in list: "+ bankList.size());
-
     for(int i = 0; i < bankList.size(); i++) {
       if(bankList.get(i).getAccountNumber().contains(accountNumber)) {
         if(bankList.get(i).purchase(ticketPrice)) {
