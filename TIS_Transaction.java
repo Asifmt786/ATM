@@ -1,9 +1,11 @@
 public class TIS_Transaction {
+public static MHS_Main talkToBank = new MHS_Main();
 
-  public static TIS_TransactionStatus  makeTransaction(String accountNr, double price){
-    String result = MHS_Main.purchaseTicket(accountNr, price);
+  public static TIS_TransactionStatus  makeTransaction(String accountNr, double ticketPrice){
 
-    if(result.equals("Wrong accountNr")){
+    String result = talkToBank.purchaseTicket(accountNr, ticketPrice);
+
+    if(result.equals("Wrong AccountNr")){
       return new TIS_TransactionStatus(false, "");
     }else if(result.equals("Insufficient Funds")){
       return new TIS_TransactionStatus(false, "");

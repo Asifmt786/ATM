@@ -4,7 +4,8 @@ public class MHS_Main {
   public MHS_Main() {
     allBanks.setupAccounts();
   }
-  public static String purchaseTicket(String accountNr, Double ticketPrice) {
+
+  public String purchaseTicket(String accountNr, Double ticketPrice) {
     return allBanks.makePurchase(accountNr, ticketPrice);
   }
 
