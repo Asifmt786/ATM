@@ -64,7 +64,7 @@ public class MHS_Bank {
   public boolean accountExists(String accountNumber) {
     boolean found = false;
     for(int i = 0; i < bankList.size(); i++) {
-      if(bankList.get(i).getAccountNumber().contains(accountNumber)) {
+      if(bankList.get(i).getAccountNumber().equals(accountNumber)) {
         found = true;
       }
     }
@@ -74,7 +74,7 @@ public class MHS_Bank {
     String result = "";
 
     for(int i = 0; i < bankList.size(); i++) {
-      if(bankList.get(i).getAccountNumber().contains(accountNumber)) {
+      if(bankList.get(i).getAccountNumber().equals(accountNumber)) {
         if(bankList.get(i).purchase(ticketPrice)) {
           result = bankList.get(i).getBankName();
           break;
